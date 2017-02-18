@@ -7,9 +7,18 @@ class ArticlesController < ApplicationController
   def create
     #render plain: params[:article].inspect (will hash of submitted data)
     @article = Article.new(article_params)
-    @article.save
-    redirect_to articles_show(@article)
-    # After saving, page is redirected to '/articles/:id' (id is taken from "@article" argument)
+    if @article.save
+      flash[:notice] = "Article was successfully created"
+      # String saved as a hash value for the :notice key
+      redirect_to article_path(@article)
+      # After saving, page is redirected to '/articles/:id' (id is taken from "@article" argument)  
+    else
+      render "new"
+    end
+  end
+
+  def show
+    @article = Article.find(params[:id])
   end
 
   private

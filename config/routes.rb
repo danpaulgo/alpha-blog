@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get "about", to: "pages#about"
 
-  # get "articles", to: "pages#articles"
   resources :articles
+  # 'rake routes' command will show all routes created by this line of code, including, show, edit, and create
 
 end
