@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  gem 'sqlite3', '1.3.11'
+  # gem 'sqlite3', '1.3.11'
   gem 'byebug',  '9.0.0', platform: :mri
 end
 
